@@ -1,0 +1,20 @@
+<main class="container-xxl pt-sm-5 mt-lg-4 pb-sm-5 mb-lg-4 pt-3 pb-3">
+  <article class="cards text-center">
+    <h2 class="pt-4 mt-md-5 pb-3 mb-md-3  fw-bold">{{header}}</h2>
+    <section class="row gy-4">
+      <section class="col-lg-4 col-md-6" *ngFor="let product of products">
+        <div class="card">
+          <img src='{{product.image}}' class="card-img-top" alt="tea {{product.title}}">
+          <div class="card-body text-start">
+            <h5 class="card-title fw-bold">{{product.title}}</h5>
+            <p class="card-text">{{product.description | shortText}}</p>
+            <a class="btn btn-primary" style="--bs-btn-padding-x: 3rem" [routerLink]="['/product', product.id]">Подробнее</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </article>
+</main>
+<div class="loader-bg" *ngIf="loading">
+  <div class="loader"></div>
+</div>

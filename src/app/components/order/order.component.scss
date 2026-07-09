@@ -1,0 +1,14 @@
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+
+.order {
+  min-height: 100vh;
+}
+
+.success-message {
+  min-height: 100vh;
+  font-size: 50px;
+}

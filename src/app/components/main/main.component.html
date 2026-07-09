@@ -1,0 +1,97 @@
+
+<main class="container-xxl pt-sm-5 mt-lg-4 pb-sm-5 mb-lg-4 pt-3 pb-3">
+  <img src="assets/images/main_image.png" class="img-fluid" alt="Tea pot and cup">
+</main>
+
+<article class="faq container-fluid pb-5">
+  <h2 class="pb-4 mb-md-4  fw-bold text-center">Ответы на часто задаваемые вопросы</h2>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item pb-3 border border-0">
+      <h2 class="accordion-header">
+        <button class="accordion-button text-white fs-6 fw-bold pt-4 pb-4 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                aria-controls="collapseOne">
+          Собираете ли вы подарочные боксы?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item pb-3 border border-0">
+      <h2 class="accordion-header">
+        <button class="accordion-button text-white fs-6 fw-bold pt-4 pb-4 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true"
+                aria-controls="collapseTwo">
+          Сколько у вас разновидностей чая?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Постоянно 6 разновидностей, но можно заказать дополнительно 16 сортов.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item pb-3 border border-0">
+      <h2 class="accordion-header">
+        <button class="accordion-button text-white fs-6 fw-bold pt-4 pb-4 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true"
+                aria-controls="collapseThree">
+          В какой срок осуществляется доставка?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          От 5 дней до 2 недель при заказе редкого сорта.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item pb-3 border border-0">
+      <h2 class="accordion-header">
+        <button class="accordion-button text-white fs-6 fw-bold pt-4 pb-4 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
+                aria-controls="collapseFour">
+          У вас обновляется ассортимент?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          Да раз в две недели.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item pb-3 border border-0">
+      <h2 class="accordion-header">
+        <button class="accordion-button text-white fs-6 fw-bold pt-4 pb-4 rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true"
+                aria-controls="collapseFive">
+          Какого объема у вас пачки чая?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          У нас разная упаковка, есть 50, 100, 200 грамм.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<div class="modal d-flex" *ngIf="isPopupOpen">
+  <div class="modal-dialog d-flex justify-content-center align-items-center">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="btn-close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body text-center fs-4">
+        <p>Посмотрите наши чайные коллекции</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-primary" [routerLink]="'/catalogue'">Смотреть</button>
+      </div>
+    </div>
+  </div>
+</div>

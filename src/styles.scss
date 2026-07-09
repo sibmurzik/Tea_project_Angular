@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('./assets/fonts/Arial_Regular.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: url('./assets/fonts/Arial_Bold.ttf');
+  font-weight: bold;
+}
+
+:root {
+  --blue-background: rgb(20, 98, 138);
+  --bs-accordion-btn-icon-white: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon-white: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-weight: normal;
+  position: relative;
+  min-height: 100vh;
+
+
+}
+
+
+
+.bg-body-tertiary {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.btn-primary, .accordion-button, .accordion-button:not(.collapsed) {
+  background-color: var(--blue-background);
+}
+
+.faq {
+  max-width: 856px;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-active-icon-white);
+
+}
+
+.accordion-button::after {
+  background-image: var(--bs-accordion-btn-icon-white);
+
+}
+
+.order {
+  max-width: 636px;
+}
+

@@ -1,0 +1,88 @@
+<section class="order container-fluid pt-sm-5 mt-lg-4 pb-sm-5 pt-3 pb-5" *ngIf="!orderAccepted">
+  <h2 class="fw-bold text-center pb-3 mb-md-5" >Сделать заказ</h2>
+  <form class="row g-3" [formGroup]="orderForm" >
+    <div class="col-12">
+      <label for="inputProduct" class="form-label">Товар</label>
+      <input type="text" class="form-control"   formControlName="product" name="productTitle">
+    </div>
+    <div class="col-md-4">
+      <label for="inputFirstNameName" class="form-label">Имя</label>
+      <input type="text" class="form-control" id="inputFirstNameName" formControlName="name" appCapitalizeFirst>
+      <div  class="text-danger" *ngIf="name?.hasError('required') && (name?.dirty || name?.touched)">
+        <span> Заполните имя кириллицей </span>
+      </div>
+      <div  class="text-danger" *ngIf="!name?.hasError('required') && name?.invalid && (name?.dirty || name?.touched)">
+        <span> Заполните имя кириллицей</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="inputLastName" class="form-label">Фамилия</label>
+      <input type="text" class="form-control" id="inputLastName" formControlName="last_name" appCapitalizeFirst>
+      <div  class="text-danger" *ngIf="last_name?.hasError('required') && (last_name?.dirty || last_name?.touched)">
+        <span> Заполните имя кириллицей </span>
+      </div>
+      <div  class="text-danger" *ngIf="!last_name?.hasError('required') && last_name?.invalid && (last_name?.dirty || last_name?.touched)">
+        <span> Заполните имя кириллицей</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="inputPhone" class="form-label">Телефон</label>
+      <input type="tel" class="form-control" id="inputPhone" formControlName="phone">
+      <div  class="text-danger" *ngIf="phone?.hasError('required') && (phone?.dirty || phone?.touched)">
+        <span>Телефон "+"(опционально) и 11 цифр</span>
+      </div>
+      <div  class="text-danger" *ngIf="!phone?.hasError('required') && phone?.invalid && (phone?.dirty || phone?.touched)">
+        <span>Телефон "+"(опционально) и 11 цифр</span>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <label for="inputCountry" class="form-label">Страна</label>
+      <select class="form-select" id="inputCountry" formControlName="country">
+        <option value="" disabled selected>Выберите страну</option>
+        <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+      </select>
+      <div  class="text-danger" *ngIf="country?.invalid &&  country?.touched">
+        <span>Выберите страну</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="inputZip" class="form-label">Индекс</label>
+      <input type="number" class="form-control" id="inputZip" formControlName="zip">
+      <div  class="text-danger" *ngIf="zip?.hasError('required') &&  (zip?.dirty || zip?.touched)">
+        <span>Индекс обязателен</span>
+      </div>
+
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Адрес</label>
+      <input type="text" class="form-control" id="inputAddress" formControlName="address">
+      <div  class="text-danger" *ngIf="address?.hasError('required') && (address?.dirty || address?.touched)">
+        <span> Заполните адрес</span>
+      </div>
+      <div  class="text-danger" *ngIf="!address?.hasError('required') && address?.invalid && (address?.dirty || address?.touched)">
+        <span> Можно использовать только буквы, цифры, пробелы, дефис и слеш,</span>
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="inputComments" class="form-label">Комментарий к заказу</label>
+      <input type="text" class="form-control" id="inputComments" formControlName="comment">
+    </div>
+
+    <div class="col-12">
+      <div *ngIf="orderForm.invalid && (orderForm.touched || orderForm.dirty) " class="text-danger">
+        Надо корректно заполнить все поля формы
+        </div>
+      <button type="submit" class="btn btn-primary" [disabled]="sendingForm" style="width: 200px" (click)="sentOrder()">Отправить</button>
+      <div *ngIf="requestError" class="text-danger">
+          «Произошла ошибка. Попробуйте еще раз.»
+      </div>
+
+    </div>
+  </form>
+
+</section>
+
+<div class="success-message container-fluid d-flex justify-content-center align-items-center h-100" *ngIf="orderAccepted">
+  <div class="success-text text-success" >Спасибо за заказ!</div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="header navbar navbar-expand-md bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/catalogue'">Каталог</a>
+        </li>
+
+
+      </ul>
+      <form class="d-flex" role="search" [formGroup]="searchForm" >
+        <button class="btn btn-outline-danger ps-3 pe-3 me-2 text-nowrap " type="button" (click)="resetSearch()">Сброс поиска</button>
+        <input class="form-control me-2" type="search" placeholder="Поиск чая" aria-label="Search" formControlName="search"/>
+        <button class="btn btn-outline-primary ps-3 pe-3" type="button" (click)="searchProducts()">Найти</button>
+
+      </form>
+    </div>
+  </div>
+</nav>
