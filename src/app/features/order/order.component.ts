@@ -1,11 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {ProductsService} from "../../services/products.service";
+import {ProductsService} from "../../shared/services/products.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Country} from "../../types/country.type";
-import {countries} from "../../types/countries";
-import {OrderRequest} from "../../types/order.type";
+import {Country} from "../../../types/country.type";
+import {countries} from "../../../types/countries";
+import {OrderRequest} from "../../../types/order.type";
 
 
 

@@ -1,44 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { MainComponent } from './components/main/main.component';
-import { CatalogueComponent } from './components/cataloque/catalogue.component';
-import { ProductComponent } from './components/product/product.component';
-import { OrderComponent } from './components/order/order.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import {ProductsService} from "./services/products.service";
-import {HttpClientModule} from "@angular/common/http";
-import { ShortTextPipe } from './pipe/short-text.pipe';
-import { CapitalizeFirstDirective } from './directives/capitalize-first.directive';
-
-
+import { HeaderComponent } from './shared/layout/header/header.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
+import {SharedModule} from "./shared/shared.module";
+import {LayoutComponent} from "./features/layout.component";
+import {OrderModule} from "./features/order/order.module";
+import {MainModule} from "./features/main/main.module";
+import {ProductsModule} from "./features/products/products.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    CatalogueComponent,
-    ProductComponent,
-    OrderComponent,
     HeaderComponent,
     FooterComponent,
-    ShortTextPipe,
-    CapitalizeFirstDirective,
-
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
+    SharedModule,
+    OrderModule,
+    MainModule,
+    ProductsModule
+
   ],
-  providers: [ProductsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

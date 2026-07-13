@@ -27,10 +27,20 @@ body {
   font-family: 'Arial', sans-serif;
   font-weight: normal;
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 110px);
 
 
 }
+
+
+app-footer {
+  position: absolute;
+  bottom: -80px;
+  width: 100%;
+
+
+}
+
 
 
 
@@ -60,3 +70,7 @@ body {
   max-width: 636px;
 }
 
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

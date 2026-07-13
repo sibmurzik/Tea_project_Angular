@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ProductType} from "../types/product.type";
+import {ProductType} from "../../../types/product.type";
 import {Observable} from "rxjs";
-import {OrderRequest} from "../types/order.type";
+import {OrderRequest} from "../../../types/order.type";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(
+)
 export class ProductsService {
 
 

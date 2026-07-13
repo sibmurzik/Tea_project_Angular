@@ -17,10 +17,9 @@
 
 
       </ul>
-      <form class="d-flex" role="search" [formGroup]="searchForm" >
-        <button class="btn btn-outline-danger ps-3 pe-3 me-2 text-nowrap " type="button" (click)="resetSearch()">Сброс поиска</button>
+      <form class="d-flex" role="search" [formGroup]="searchForm"  (ngSubmit)="searchProducts()">
         <input class="form-control me-2" type="search" placeholder="Поиск чая" aria-label="Search" formControlName="search"/>
-        <button class="btn btn-outline-primary ps-3 pe-3" type="button" (click)="searchProducts()">Найти</button>
+        <button class="btn btn-outline-primary ps-3 pe-3" >Найти</button>
 
       </form>
     </div>

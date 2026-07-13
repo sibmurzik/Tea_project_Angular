@@ -1,6 +1,6 @@
 <section class="order container-fluid pt-sm-5 mt-lg-4 pb-sm-5 pt-3 pb-5" *ngIf="!orderAccepted">
   <h2 class="fw-bold text-center pb-3 mb-md-5" >Сделать заказ</h2>
-  <form class="row g-3" [formGroup]="orderForm" >
+  <form class="row g-3" [formGroup] ="orderForm" (ngSubmit)="sentOrder()" >
     <div class="col-12">
       <label for="inputProduct" class="form-label">Товар</label>
       <input type="text" class="form-control"   formControlName="product" name="productTitle">
@@ -73,7 +73,7 @@
       <div *ngIf="orderForm.invalid && (orderForm.touched || orderForm.dirty) " class="text-danger">
         Надо корректно заполнить все поля формы
         </div>
-      <button type="submit" class="btn btn-primary" [disabled]="sendingForm" style="width: 200px" (click)="sentOrder()">Отправить</button>
+      <button  class="btn btn-primary order-btn" [disabled]="sendingForm" >Отправить</button>
       <div *ngIf="requestError" class="text-danger">
           «Произошла ошибка. Попробуйте еще раз.»
       </div>

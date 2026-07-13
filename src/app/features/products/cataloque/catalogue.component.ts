@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ProductsService} from "../../services/products.service";
-import {ProductType} from "../../types/product.type";
+import {ProductsService} from "../../../shared/services/products.service";
+import {ProductType} from "../../../../types/product.type";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 

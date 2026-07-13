@@ -1,10 +1,10 @@
-<main class="container-xxl pt-sm-5 mt-lg-4 pb-sm-5 mb-lg-4 pt-3 pb-5 h-100">
+<main class="container-xxl pt-sm-5 mt-lg-4 pb-sm-5 mb-lg-4 pt-3 pb-5 ">
   <div class="card justify-content-center align-items-center">
     <img src='{{product.image}}' class="img-fluid w-50" alt="tea {{product.title}}">
     <div class="card-body text-center">
       <h5 class="card-title fw-bold fs-2 pb-3">{{ product.title }}</h5>
       <p class="card-text pb-4">{{ product.description }}</p>
-      <a  class="btn btn-primary fs-5" style="--bs-btn-padding-x: 3rem" routerLink="/order" [queryParams]="{product:product.title}">Купить</a>
+      <a  class="btn btn-primary buy-btn fs-5 px-5"  routerLink="/order" [queryParams]="{product:product.title}">Купить</a>
     </div>
   </div>
 
